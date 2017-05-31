@@ -1,7 +1,20 @@
 var namespace = "http://www.w3.org/2000/svg"
 
 // Write your code here!
-
+function myGames(){
+  var random = Math.random()
+  if(random < .4){
+    makeText("Team Liquid is a team for many different games. One is CS:GO. They are a competitive North American team who are known for playing very well, but not able to close out matches.",20,50,3,"Open Sans","white",1)
+makeImage("https://gameraven.com/wp-content/uploads/2016/12/team-liquyid.jpg",70,10,40,40)
+  }
+  else if (random < .7){
+    makeText("Team Envyus is a large European team that is known for having good players all around, especially their awper. This team has recently swapped their roster around with another team known as G2.",20,70,3,"Open Sans","white",1)
+makeImage("https://pbs.twimg.com/profile_images/720691210768269312/IrRM-XjR_400x400.jpg",140,10,30,30)
+  }else{
+    makeText("Cloud 9 is the best North American team. They are a very strong team because their teamwork is very good. This team is known for their random plays, especially their awper Skadoodle.",20,90,3,"Open Sans","white",1)
+makeImage("http://www.related2gaming.com/wp-content/uploads/2015/07/cloud.jpg",210,10,40,40)
+  }
+}
 // DO NOT EDIT CODE BELOW THIS LINE!
 function getX(shape) {
   if (!shape) {
@@ -70,7 +83,7 @@ function setY(shape, y) {
     var yDiff = parseFloat(shape.getAttribute("y2")) - parseFloat(shape.getAttribute("y1"))
     shape.setAttribute("y1", y)
     shape.setAttribute("y2", y + yDiff)
-  } 
+  }
 }
 
 function move(shape, dx, dy) {
@@ -108,7 +121,7 @@ function makeCircle(cx, cy, r, fill, opacity) {
   circle.setAttribute("r", r)
   circle.setAttribute("fill", fill)
   circle.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(circle)
   return circle
@@ -122,7 +135,7 @@ function makeRect(x, y, width, height, fill, opacity) {
   rect.setAttribute("height", height)
   rect.setAttribute("fill", fill)
   rect.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(rect)
   return rect
@@ -136,7 +149,7 @@ function makeEllipse(cx, cy, rx, ry, fill, opacity) {
   ellipse.setAttribute("ry", ry)
   ellipse.setAttribute("fill", fill)
   ellipse.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(ellipse)
   return ellipse
@@ -151,7 +164,7 @@ function makeLine(x1, y1, x2, y2, stroke, strokeWidth, opacity) {
   line.setAttribute("stroke", stroke)
   line.setAttribute("stroke-width", strokeWidth)
   line.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(line)
   return line
@@ -164,7 +177,7 @@ function makePolyline(points, stroke, strokeWidth, opacity) {
   polyline.setAttribute("stroke-width", strokeWidth)
   polyline.setAttribute("opacity", opacity)
   polyline.setAttribute("fill", "none")
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(polyline)
   return polyline
@@ -175,7 +188,7 @@ function makePolygon(points, fill, opacity) {
   polygon.setAttribute("points", points)
   polygon.setAttribute("opacity", opacity)
   polygon.setAttribute("fill", fill)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(polygon)
   return polygon
@@ -190,7 +203,7 @@ function makeText(message, x, y, fontSize, fontFamily, fill, opacity) {
   text.setAttribute("font-family", fontFamily)
   text.setAttribute("fill", fill)
   text.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(text)
   return text
@@ -204,7 +217,7 @@ function makeImage(url, x, y, width, height, opacity) {
   image.setAttribute("width", width)
   image.setAttribute("height", height)
   image.setAttribute("opacity", opacity)
-  
+
   var canvas = document.getElementById("canvas")
   canvas.appendChild(image)
   return image
@@ -221,7 +234,7 @@ function collides(shape1, shape2) {
   } else {
     throw "Oops, that kind of shape isn't supported by the collide function!"
   }
-  
+
   var xMin, xMax, yMin, yMax
   if (shape2.hasAttribute("x")) {
     xMin = getX(shape2)
@@ -246,7 +259,7 @@ function collides(shape1, shape2) {
   } else {
     throw "Oops, that kind of shape isn't supported by the collide function!"
   }
-  return (centerX > xMin && 
+  return (centerX > xMin &&
           centerX < xMax &&
          centerY > yMin &&
          centerY < yMax)

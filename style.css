@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+h1{
+  text-align: center;
+  color: red;
+}
+h3{
+  text-align: center;
+  color: Green
+}
+p{
+  text-align: center;
+  color : white;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+body{
+  background-color: black;
+}
+a{
+  color: orange;
+  display :inline;
+  padding : 10px;
+  width : 100px;
+  text-align: center;
+  margin-left: 260px;
+}
+makeText{
+  text-align: center;
+}
